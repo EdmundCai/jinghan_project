@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>广州地区酒店行业协会</title>
+<meta name="description" content="广州地区酒店行业协会,联系我们">
+<meta name="keywords" content="广州地区酒店行业协会,联系我们">
+<link href="__PUBLIC__/Css/style.css" rel="stylesheet">
+<link href="__PUBLIC__/Css/main.css" rel="stylesheet">
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Js/jquery-2.0.3.min.js" ></script>
+</head>
+<body>
+<div id="war">
+    <div id="header">
+        <include file="Index:header"/>
+    </div>
+
+    <div id="content">
+        <div id="all_con">
+            <div id="c_nav" style="margin-left:-24px;"><b>最新资讯及刊物</b></div>
+            <div id="c_left">
+                <div id="next_nav">    
+                    <include file="left_nav" />
+                </div>
+                <div id="divh"></div>
+            </div>
+            <div id="c_con">
+                <div id="news">
+                    <!-- 如果不是专业刊物页面的话展示新闻列表形式 -->
+                    <if condition="$cursor eq publication">
+                        <div id="top">
+                            <li><a href="{:U('News/book?type=publication')}" <if condition="$choose eq article">class="top_check"</if>>精选文摘</a></li>
+                            <li><a href="{:U('News/book?type=publication&choose=special')}" <if condition="$choose eq special">class="top_check"</if>>专业会刊</a></li>   
+                            <li><a href="{:U('News/book?type=publication&choose=download')}" <if condition="$choose eq download">class="top_check"</if>>会刊下载</a></li> 
+                        </div>
+                        
+                    </if>
+                    <if condition="$choose neq special">
+                        <ul id="news_list">
+                            <li>{$data}<span class="date">2016-2-1</span></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                            <li><a href="">品尝台湾美食 领略宝岛魅力 <span class="date">2016-2-1</span></a></li>
+                        </ul>        
+                    <else/>
+                    <!--  否则展示精选文摘/专业会刊  -->
+                        <ul id="book_list">
+                            <!-- {$data} -->
+                            <li>
+                                <a href="">
+                                    <img src="__PUBLIC__/Images/test_image/special1.jpg">
+                                    <span>《广州地区酒店》（2013）第1期总第89期</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="__PUBLIC__/Images/test_image/special1.jpg">
+                                    <span>《广州地区酒店》（2013）第1期总第89期</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="__PUBLIC__/Images/test_image/special1.jpg">
+                                    <span>《广州地区酒店》（2013）第1期总第89期</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="__PUBLIC__/Images/test_image/special1.jpg">
+                                    <span>《广州地区酒店》（2013）第1期总第89期</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="__PUBLIC__/Images/test_image/special1.jpg">
+                                    <span>《广州地区酒店》（2013）第1期总第89期</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="__PUBLIC__/Images/test_image/special1.jpg">
+                                    <span>《广州地区酒店》（2013）第1期总第89期</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="__PUBLIC__/Images/test_image/special1.jpg">
+                                    <span>《广州地区酒店》（2013）第1期总第89期</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="">
+                                    <img src="__PUBLIC__/Images/test_image/special1.jpg">
+                                    <span>《广州地区酒店》（2013）第1期总第89期</span>
+                                </a>
+                            </li>
+                        </ul>  
+                    </if>  
+                </div>
+
+                <div id="pages">
+                    <a href="">上一页</a>
+                    <a href="">1</a>
+                    <a href="">2</a>
+                    <a href="">3</a>
+                    <a href="">4</a>
+                    <a href="">下一页</a>
+                </div>
+            </div>
+            <div id="c_right">
+                <include file="Index:search"/>
+                <div class="clear"></div>
+                <div class="cnav_r">                    
+                    <include file="Index:cnav"/>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+
+    <div id="footer">
+    	<include file="Index:footer"/>
+    </div>
+</div>
+</body>
+</html>

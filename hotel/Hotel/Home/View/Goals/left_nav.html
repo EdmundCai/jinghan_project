@@ -1,0 +1,24 @@
+<ul class="dropdown">
+    <li <if condition="$cursor eq mission">class="checkedli"</if>><a href="{:U('Goals/index?type=mission')}">协会使命</a></li>
+    <li <if condition="$cursor eq rules">class="checkedli"</if>><a href="{:U('Goals/index?type=rules')}">协会章程</a></li>
+    <li <if condition="$cursor eq joinUs">class="checkedli"</if>><a href="{:U('Goals/index?type=joinUs')}">加入我们</a></li>
+    <li class="vtitle">
+        <a>协会会员</a>
+        <ul <if condition="$tap neq member">style="display:none;"</if>>
+           <li <if condition="$cursor eq chairman">class="checkedli"</if>><a href="{:U('Goals/index?type=chairman')}">会长单位</a></li>
+           <li <if condition="$cursor eq vice_chairman">class="checkedli"</if>><a href="{:U('Goals/index?type=vice_chairman')}">副会长单位</a></li>
+           <li <if condition="$cursor eq st_council">class="checkedli"</if>><a href="{:U('Goals/index?type=st_council')}">常务理事单位</a></li>
+           <li <if condition="$cursor eq council">class="checkedli"</if>><a href="{:U('Goals/index?type=council')}">理事单位</a></li>
+           <li <if condition="$cursor eq member">class="checkedli"</if>><a href="{:U('Goals/index?type=member')}">会员单位</a></li>
+        </ul>
+    </li>
+</ul>
+
+
+<script>
+$(function(){
+  $('.vtitle').click(function(){
+    $(this).find('ul').slideToggle(300);
+  });
+});
+</script>

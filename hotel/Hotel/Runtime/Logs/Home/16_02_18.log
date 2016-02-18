@@ -1,0 +1,129 @@
+[ 2016-02-18T09:58:07+08:00 ] ::1 /hotel/index.php/Home
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000503s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000743s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000833s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000429s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000706s ]
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\2a09bc7c9210959c45a760563e5a82e9.php 第 222 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.156148s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.156236s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000613s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000712s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000670s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000750s ]
+
+[ 2016-02-18T10:14:16+08:00 ] ::1 /hotel/index.php/Home/News/index/type/news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000730s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000818s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000216s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000644s ]
+NOTIC: [8] Use of undefined constant news - assumed 'news' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 50 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 51 行.
+NOTIC: [8] Use of undefined constant activity - assumed 'activity' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 52 行.
+NOTIC: [8] Use of undefined constant notice - assumed 'notice' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 53 行.
+NOTIC: [8] Use of undefined constant meeting - assumed 'meeting' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 54 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 60 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 61 行.
+NOTIC: [8] Use of undefined constant brief - assumed 'brief' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 62 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 98 行.
+NOTIC: [8] Use of undefined constant special - assumed 'special' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 103 行.
+NOTIC: [8] Undefined variable: choose F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 103 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 185 行.
+NOTIC: [8] Undefined variable: current F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.041458s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.041543s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000469s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000541s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000728s ]
+
+[ 2016-02-18T10:44:57+08:00 ] ::1 /hotel/index.php/Home/News/index/type/news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000027s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000754s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001396s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001577s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000118s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Use of undefined constant news - assumed 'news' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 50 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 51 行.
+NOTIC: [8] Use of undefined constant activity - assumed 'activity' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 52 行.
+NOTIC: [8] Use of undefined constant notice - assumed 'notice' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 53 行.
+NOTIC: [8] Use of undefined constant meeting - assumed 'meeting' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 54 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 60 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 61 行.
+NOTIC: [8] Use of undefined constant brief - assumed 'brief' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 62 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 98 行.
+NOTIC: [8] Use of undefined constant special - assumed 'special' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 103 行.
+NOTIC: [8] Undefined variable: choose F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 103 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 185 行.
+NOTIC: [8] Undefined variable: current F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.021497s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.021621s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000544s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000622s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001208s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001315s ]
+
+[ 2016-02-18T10:44:58+08:00 ] ::1 /hotel/index.php/Home/News/index/type/news.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000031s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000774s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000770s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000880s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000120s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000222s ]
+NOTIC: [8] Use of undefined constant news - assumed 'news' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 50 行.
+NOTIC: [8] Use of undefined constant news - assumed 'news' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 51 行.
+NOTIC: [8] Use of undefined constant activity - assumed 'activity' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 52 行.
+NOTIC: [8] Use of undefined constant notice - assumed 'notice' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 53 行.
+NOTIC: [8] Use of undefined constant meeting - assumed 'meeting' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 54 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 60 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 61 行.
+NOTIC: [8] Use of undefined constant brief - assumed 'brief' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 62 行.
+NOTIC: [8] Use of undefined constant publication - assumed 'publication' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 98 行.
+NOTIC: [8] Use of undefined constant special - assumed 'special' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 103 行.
+NOTIC: [8] Undefined variable: choose F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 103 行.
+NOTIC: [8] Use of undefined constant index - assumed 'index' F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 185 行.
+NOTIC: [8] Undefined variable: current F:\wamp\www\hotel\Hotel\Runtime\Cache\Home\c7c83dd2b0f9c41951e0d66c4b9161dd.php 第 185 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.017357s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017444s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000540s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000620s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000629s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000715s ]
+
+[ 2016-02-18T10:45:03+08:00 ] ::1 /hotel/index.php/Home/Admin
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001215s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001317s ]
+ERR: 无法加载控制器:Admin
+

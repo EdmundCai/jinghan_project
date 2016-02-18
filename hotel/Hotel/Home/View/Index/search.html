@@ -1,0 +1,50 @@
+<div id="ht_search">
+	<!-- - - 这尼玛居然是2个排版  内页的话就用下面这个gif！ -->
+	<if condition="$current neq index">
+		<p style="margin-right:15px;">
+			<img src="__PUBLIC__/Images/map.gif" style="width:100%;" alt="广州地区酒店">
+		</p>
+	</if>
+	
+	<form action="{:U('Index/index')}" method="post">
+		<p><b>区域：</b></p>
+		<ul id="city">
+			<li><input type="radio" name="city" value="1">白云区</li>
+			<li><input type="radio" name="city" value="2">海珠区</li>
+			<li><input type="radio" name="city" value="3">荔湾区</li>
+			<li><input type="radio" name="city" value="4">越秀区</li>
+			<li><input type="radio" name="city" value="5">天河区</li>
+			<li><input type="radio" name="city" value="6">番禺区</li>
+			<li><input type="radio" name="city" value="7">黄埔区</li>
+			<li><input type="radio" name="city" value="8">萝岗区</li>
+			<li><input type="radio" name="city" value="9">花都区</li>
+			<li><input type="radio" name="city" value="10">增城市</li>
+			<li><input type="radio" name="city" value="11">从化区</li>
+			<li><input type="radio" name="city" value="12">南沙区</li>
+		</ul>
+		<div class="clear"></div>
+		<p><b>星级：</b></p>
+		<ul id="star">
+			<li><input type="radio" name="star" value="1">一星</li>
+			<li><input type="radio" name="star" value="2">二星</li>
+			<li><input type="radio" name="star" value="3">三星</li>
+			<li><input type="radio" name="star" value="4">四星</li>
+			<li><input type="radio" name="star" value="5">五星</li>
+		</ul>
+		<div class="clear"></div>
+		<p><input type="text" name="ht_name" id="ht_name" placeholder="搜索:酒店名称"></p>
+		<p><input type="submit" value="搜索" id="submit"></p>
+	</form>
+	<script>
+	$(function(){
+		$("#city li input").click(function(){
+			$('#city li').removeClass('radio');    						
+			$('input:radio[name="city"]:checked').parent().addClass('radio');
+		});
+		$("#star li input").click(function(){
+			$('#star li').removeClass('radio');    						
+			$('input:radio[name="star"]:checked').parent().addClass('radio');
+		});
+	})
+	</script>
+</div>

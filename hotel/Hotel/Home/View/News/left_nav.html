@@ -1,0 +1,44 @@
+<ul class="dropdown">
+  <li class="vtitle">
+      <a >行业资讯</a>
+      <ul <if condition="$tap neq news">style="display:none;"</if>>
+          <li <if condition="$cursor eq news">class="checkedli"</if>><a href="{:U('News/index?type=news')}">行业资讯</a></li>
+          <li <if condition="$cursor eq activity">class="checkedli"</if>><a href="{:U('News/index?type=activity')}">协会活动</a></li>
+          <li <if condition="$cursor eq notice">class="checkedli"</if>><a href="{:U('News/index?type=notice')}">最新通知</a></li>
+          <li <if condition="$cursor eq meeting">class="checkedli"</if>><a href="{:U('News/index?type=meeting')}">会展会议</a></li>
+      </ul>
+  </li>
+
+  <li class="vtitle">
+      <a >协会刊物</a>
+      <ul <if condition="$tap neq publication">style="display:none;"</if>>
+          <li <if condition="$cursor eq publication">class="checkedli"</if>><a href="{:U('News/book?type=publication')}">协会刊物</a></li>
+          <li <if condition="$cursor eq brief">class="checkedli"</if>><a href="{:U('News/book?type=brief')}">每月简报</a></li>
+      </ul>
+  </li>
+</ul>
+<!-- <script src="__PUBLIC__/Js/tendina.js"></script> -->
+<script>
+  // $('.dropdown').tendina({
+  //   animate: true,
+  //   speed: 500,
+  //   openCallback: function($clickedEl) {
+  //     console.log($clickedEl);
+  //   },
+  //   closeCallback: function($clickedEl) {
+  //     console.log($clickedEl);
+  //   }
+  // })
+$(function(){
+  $('.vtitle').click(function(){
+    // $(".vtitle").find('ul').slideUp();
+    // $(this).find('ul').toggle(
+    //   function(){ 
+    //       $(this).find('ul').hide(); 
+    //   },function(){  
+    //       $(this).find('ul').slide(); 
+    //   });
+    $(this).find('ul').slideToggle(300);
+  });
+});
+</script>
