@@ -23,31 +23,34 @@
 <script type="text/javascript" src="__PUBLIC__/Admin/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
 <script>DD_belatedPNG.fix('*');</script>
 <![endif]-->
-<title>添加新闻</title>
+<style type="text/css">
+  body{
+    /*width: 800px;
+    padding:0;
+    margin: right:0;
+    margin:0 auto;*/
+  }
+</style>
+<title>编辑新闻</title>
 </head>
 <body>
 <div class="pd-20">
-  <form action="" method="post" class="form form-horizontal" id="form-product">
-  <input type="hidden" value="{:I('get.type')}" id="type">
+  <form action="" method="post" class="form form-horizontal" id="form-progress">
     <div class="row cl">
-      <label class="form-label col-3">新闻标题：</label>
+      <label class="form-label col-3">标题：</label>
       <div class="formControls col-5">
-        <input type="text" class="input-text" value="" placeholder="请输入10个字以内的标题" id="news-title" name="title" datatype="*2-16" nullmsg="颜色不能为空">
+        <input type="text" class="input-text" value="{$result.title}" placeholder="请输入10个字以内的标题" id="news-title" name="title" datatype="*2-16" nullmsg="标题不能为空">
       </div>
       <div class="col-4"> </div>
     </div>
-    
-    <div class="row cl">
-      <label class="form-label col-3">新闻详情：</label>
-    </div>
-
+    <label class="form-label col-3">新闻详情：</label>
     <div class="row cl desc">
+      
         <!-- 加载编辑器的容器 -->
         <script id="container" name="description" type="text/plain">
-            
+            {$result['details']|htmlspecialchars_decode}
         </script>
     </div>
- 
      <!--  <div class="row cl">
           <label class="form-label col-3">图片：</label>
           <div class="formControls col-5">
@@ -62,7 +65,7 @@
     <div class="row cl">
       <div class="col-3 col-offset-5">
         <input type="hidden" name="id" value="">
-        <input class="btn btn-primary radius submit" type="button" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+        <input class="btn btn-primary radius submit" type="button" value="&nbsp;&nbsp;保存&nbsp;&nbsp;">
       </div>
     </div>
   </form>
@@ -79,70 +82,64 @@
 <!-- 编辑器源码文件 -->
 <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.min.js"></script>
 <!-- 实例化编辑器 -->
-
+<script type="text/javascript">
+    $(function(){
+        window.UEDITOR_CONFIG.initialFrameHeight=500;
+        window.UEDITOR_CONFIG.initialFrameWidth=710;
+        var ue = UE.getEditor('container');
+    });
+</script>
 
 <script type="text/javascript">
 $(function(){
-  window.UEDITOR_CONFIG.initialFrameHeight=500;
-  window.UEDITOR_CONFIG.initialFrameWidth=900;
-        var ue = UE.getEditor('container');
-
-	$("#form-user-add").Validform({
-		tiptype:2,
-	});
-	$('.skin-minimal input').iCheck({
-		checkboxClass: 'icheckbox-blue',
-		radioClass: 'iradio-blue',
-		increaseArea: '20%'
-	});
+  $("#form-user-add").Validform({
+    tiptype:2,
+  });
+  $('.skin-minimal input').iCheck({
+    checkboxClass: 'icheckbox-blue',
+    radioClass: 'iradio-blue',
+    increaseArea: '20%'
+  });
 
   $(".submit").click(function(){
-      news_add();
+      news_save();
     })
 
-  function news_add(){
-    // console.log($('#news-title').val());
+    function news_save(){
+    // console.log($('#progress-year').val());
+    // console.log($('#progress-title').val());
+    // console.log($('#progress-description').val());
     // console.log($('#form-product').attr('action'));
+    
     var content = UE.getEditor('container').getContent();
-         // console.log(content);
-    var type = $("#type").val();
+    console.log(content);
     $.ajax({
-      url: $('#form-product').attr('action'),
+      url: $('#form-progress').attr('action'),
       type: 'POST',
       dataType: 'json',
       // data: $('#form-product').serialize(),
-      data:{"title":$('#news-title').val(),"details":content,'type':type},
+      data:{"title":$('#news-title').val(),'details':content},
+      async: false,
     })
-      .done(function(response) {
-          console.log("success");
-          if (response.status == '1') {
-        parent.history.go(0);
-        //当你在iframe页面关闭自身时
-        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
-        parent.layer.close(index); //再执行关闭
-          }else{
-              alert(response.message);
-          }
-      })
-      .fail(function(jqXHR, textStatus) {
-          console.log("error:" + textStatus);
-      })
-      .always(function() {
-          console.log("complete");
-      });
+    .done(function(response) {
+        console.log("success");
+        if (response.status == '1') {
+      parent.history.go(0);
+      //当你在iframe页面关闭自身时
+      var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+      parent.layer.close(index); //再执行关闭
+        }else{
+            alert(response.message);
+        }
+    })
+    .fail(function(jqXHR, textStatus) {
+        console.log("error:" + textStatus);
+    })
+    .always(function() {
+        console.log("complete");
+    });
     }
 });
 </script> 
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F080836300300be57b7f34f4b3e97d911' type='text/javascript'%3E%3C/script%3E"));
-</script>
 </body>
 </html>

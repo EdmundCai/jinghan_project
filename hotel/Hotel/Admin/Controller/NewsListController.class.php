@@ -15,8 +15,11 @@ class NewsListController extends Controller {
  * [newsList 行业资讯列表]
  * @return [type] [description]
  */
-	public function newsList(){
-        $result = $this->newsList->showNews();
+	public function newsList($type = ''){
+       if($type == ''){
+            $this->error("获取id失败！");
+       }
+        $result = $this->newsList->showNews($type);
         // print_r($result);exit;
 		if($result){
             $this->assign('result',$result);

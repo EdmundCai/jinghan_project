@@ -10,8 +10,10 @@ class NewsListModel extends Model {
     );
 
     //获取新闻列表 
-    public function showNews(){
-    	$result = $this->where()->order('update_time desc')->select();
+    public function showNews($type){
+        // type为0表示新闻列表
+        $where['type']=$type;
+    	$result = $this->where($where)->order('update_time desc')->select();
     	if(count($result) <= 0){
     		return false;
     	}else{

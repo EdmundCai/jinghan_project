@@ -6,9 +6,9 @@
 <title>广州地区酒店行业协会</title>
 <meta name="description" content="广州地区酒店行业协会,联系我们">
 <meta name="keywords" content="广州地区酒店行业协会,联系我们">
-<link href="/hotel/Public/Css/style.css" rel="stylesheet">
-<link href="/hotel/Public/Css/main.css" rel="stylesheet">
-<script type="text/javascript" language="javascript" src="/hotel/Public/Js/jquery-2.0.3.min.js" ></script>
+<link href="/jinghan_project/hotel/Public/Css/style.css" rel="stylesheet">
+<link href="/jinghan_project/hotel/Public/Css/main.css" rel="stylesheet">
+<script type="text/javascript" language="javascript" src="/jinghan_project/hotel/Public/Js/jquery-2.0.3.min.js" ></script>
 </head>
 <body>
 <div id="war">
@@ -63,7 +63,7 @@
       </ul>
   </li>
 </ul>
-<!-- <script src="/hotel/Public/Js/tendina.js"></script> -->
+<!-- <script src="/jinghan_project/hotel/Public/Js/tendina.js"></script> -->
 <script>
   // $('.dropdown').tendina({
   //   animate: true,
@@ -121,49 +121,49 @@ $(function(){
                             <!-- <?php echo ($data); ?> -->
                             <li>
                                 <a href="">
-                                    <img src="/hotel/Public/Images/test_image/special1.jpg">
+                                    <img src="/jinghan_project/hotel/Public/Images/test_image/special1.jpg">
                                     <span>《广州地区酒店》（2013）第1期总第89期</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="/hotel/Public/Images/test_image/special1.jpg">
+                                    <img src="/jinghan_project/hotel/Public/Images/test_image/special1.jpg">
                                     <span>《广州地区酒店》（2013）第1期总第89期</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="/hotel/Public/Images/test_image/special1.jpg">
+                                    <img src="/jinghan_project/hotel/Public/Images/test_image/special1.jpg">
                                     <span>《广州地区酒店》（2013）第1期总第89期</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="/hotel/Public/Images/test_image/special1.jpg">
+                                    <img src="/jinghan_project/hotel/Public/Images/test_image/special1.jpg">
                                     <span>《广州地区酒店》（2013）第1期总第89期</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="/hotel/Public/Images/test_image/special1.jpg">
+                                    <img src="/jinghan_project/hotel/Public/Images/test_image/special1.jpg">
                                     <span>《广州地区酒店》（2013）第1期总第89期</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="/hotel/Public/Images/test_image/special1.jpg">
+                                    <img src="/jinghan_project/hotel/Public/Images/test_image/special1.jpg">
                                     <span>《广州地区酒店》（2013）第1期总第89期</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="/hotel/Public/Images/test_image/special1.jpg">
+                                    <img src="/jinghan_project/hotel/Public/Images/test_image/special1.jpg">
                                     <span>《广州地区酒店》（2013）第1期总第89期</span>
                                 </a>
                             </li>
                             <li>
                                 <a href="">
-                                    <img src="/hotel/Public/Images/test_image/special1.jpg">
+                                    <img src="/jinghan_project/hotel/Public/Images/test_image/special1.jpg">
                                     <span>《广州地区酒店》（2013）第1期总第89期</span>
                                 </a>
                             </li>
@@ -183,7 +183,7 @@ $(function(){
                 <div id="ht_search">
 	<!-- - - 这尼玛居然是2个排版  内页的话就用下面这个gif！ -->
 	<?php if($current != index): ?><p style="margin-right:15px;">
-			<img src="/hotel/Public/Images/map.gif" style="width:100%;" alt="广州地区酒店">
+			<img src="/jinghan_project/hotel/Public/Images/map.gif" style="width:100%;" alt="广州地区酒店">
 		</p><?php endif; ?>
 	
 	<form action="<?php echo U('Index/index');?>" method="post">
