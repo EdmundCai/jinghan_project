@@ -1,14 +1,24 @@
 <?php
 namespace Admin\Controller;
 use Think\Controller;
-class NewsController extends Controller {
+class NewsListController extends Controller {
 
+    private $newsList;
+    private $activityList;
+    public function __construct(){
+        parent::__construct();
+        $this->$newsList = M('NewsList');
+        // $this->$activityList = M('ActivityList');
+    }
+    
 /**
  * [newsList 行业资讯列表]
  * @return [type] [description]
  */
 	public function newsList(){
-		if( showNews() ){
+        $result = $this->M('NewsList')->showNews();
+        print_r($result);exit;
+		if($result){
             $this->assign('result',$result);
         }else{
             $this->assign('empty',"<tr><td colspan='7' style='text-align:center;'>暂时没有新闻！</td></tr>");
