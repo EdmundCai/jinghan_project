@@ -43,7 +43,7 @@
         <th width="80">ID</th>
         <th width="160">标题</th>
         <th width="300">内容</th>
-        <th width="120">新闻显示日期</th>
+        <th width="120">新闻日期</th>
         <th width="120">操作1</th>
       </tr>
     </thead>
@@ -54,7 +54,7 @@
             <td>{$re['id']}</td>
             <td>{$re['title']}</td>
             <td class="text-c">{$re['details']|htmlspecialchars_decode|strip_tags|subtext=200}</td>
-            <td>{$re['updatetime']|date="Y-m-d",###}</td>
+            <td>{$re['date']}</td>
         
             <td class="f-14 article-manage"><a class="ml-5" onClick="product_edit('10001','','','编辑{$re['title']}通知','{:U('editNews?id='.$re['id'])}')" href="javascript:;" title="编辑新闻"><i class="icon-edit"></i></a> 
 
@@ -104,16 +104,6 @@
       });
     }
 </script>
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?080836300300be57b7f34f4b3e97d911";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F080836300300be57b7f34f4b3e97d911' type='text/javascript'%3E%3C/script%3E"));
-</script>
+
 </body>
 </html>
