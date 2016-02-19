@@ -30,6 +30,9 @@
 <body>
 <div class="pd-20">
   <form action="" method="post" class="form form-horizontal" id="form-progress">
+  <input type="hidden" value="{$result.img_path}" id="logo_path" name="logo_path" />
+  <input type="hidden" value="{$result.pdf_path}" id="pdf_path" name="pdf_path" />
+  <input type="hidden" value="{:I('get.type')}" id="type" name="type" />
     <div class="row cl">
       <label class="form-label col-2">标题：</label>
       <div class="formControls col-5">
@@ -45,9 +48,30 @@
       <div class="col-4"> </div>
     </div>
     <div class="row cl">
-      <label class="form-label col-2">详情：</label>
+      <label class="form-label col-2">封面图片：</label>
       <div class="formControls col-5">
-      
+        <img id="new_logo" src="__ROOT__/{$result.img_path}" style="width:100px;margin-bottom:10px;">
+        <input type="button" class="btn btn-primary" id="upload_button"  value=" 上传图片 " /><br/>
+        <b style="color:red">*建议上传尺寸为宽200px 高180px的图片</b>
+      </div>
+      <div class="col-4"> </div>
+    </div>
+
+    <if condition="$_GET['type'] eq 6">
+      <div class="row cl">
+        <label class="form-label col-2">会刊文件：</label>
+        <div class="formControls col-5">
+          <input type="text" class="input-text" placeholder="请输入10个字以内的标题" id="new_pdf" name="pdf" style="width:;margin-bottom:10px;" value="__ROOT__/{$result.pdf_path}" disabled="">
+          <input type="button" class="btn btn-primary" id="upload_button2"  value="上传PDF" /><br/>
+          <b style="color:red">*建议上传小于10MB的PDF文件</b>
+        </div>
+        <div class="col-4"> </div>
+      </div>
+    </if>
+
+    <div class="row cl">
+      <label class="form-label col-2">详情：</label>
+      <div class="formControls col-9">
         <!-- 加载编辑器的容器 -->
         <script id="container" name="description" type="text/plain">
             {$result['details']|htmlspecialchars_decode}
@@ -75,6 +99,7 @@
     $('#news-date').datetimepicker();
     $('#news-date').datetimepicker({value:'',step:60});
 </script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/ajaxupload.js"></script>
 <!-- 配置文件 -->
 <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
@@ -99,25 +124,97 @@ $(function(){
     increaseArea: '20%'
   });
 
-  $(".submit").click(function(){
-      news_save();
-    })
 
-    function news_save(){
-    // console.log($('#progress-year').val());
-    // console.log($('#progress-title').val());
-    // console.log($('#progress-description').val());
-    // console.log($('#form-product').attr('action'));
-    
+  var uploadOption = 
+  {
+    action:"{:U('NewsList/uppic')}",
+    name:"image",
+    // autoSubmit:false,
+    onChange:function(file,extension){
+      if(new RegExp(/(jpg)|(jpeg)|(bmp)|(png)/i).test(extension)){
+        $("#logo_path").val(file);
+      }else{
+        return false;
+      }
+    },
+    // onSubmit:function(file,extension){
+    //  $("#state").val("在上传"+file+"...");
+    // },
+    onComplete: function(file, response){
+      //console.log(response);
+              if(response == 'error'){
+                  // confirmdiv.text("文件上传失败请重新上传");
+              }else{
+                  // confirmdiv.text("上传完成");
+                  // $("#new_logo_path").val(response);
+                  // $("#new_logo").attr("src",response);
+                  // t.parent().find("#ex_license").val(response);
+                  // t.parent().find("#ex_lic123").attr("src",response);
+                  $('#logo_path').val(response);
+                  $('#new_logo').attr('src',"__ROOT__/"+response);
+              }
+              // window.clearInterval(interval);
+              this.enable();
+          }
+  }
+  var oAjaxUpload = new AjaxUpload('#upload_button',uploadOption);
+
+  var type = $("#type").val();
+
+  if( type == 6){
+    //上传pdf 
+    var uploadOption = 
+    {
+      action:"{:U('NewsList/uppdf')}",
+      name:"file",
+      // autoSubmit:false,
+      onChange:function(file,extension){
+        if(new RegExp(/(docx)|(doc)|(pdf)/i).test(extension)){
+          $("#pdf_path").val(file);
+        }else{
+          alert("文件格式错误，请上传doc/docx/pdf格式的文件！");
+          return false;
+        }
+      },
+      onComplete: function(file, response){
+        //console.log(response);
+          if(response == 'error'){
+              // confirmdiv.text("文件上传失败请重新上传");
+              alert("文件上传失败请重新上传");
+              console.log(response);
+          }else{
+              $('#pdf_path').val(response);
+              $('#new_pdf').css("display","block");
+              $('#new_pdf').attr('value',"__ROOT__/"+response);
+          }
+          this.enable();
+      }
+    }
+    var oAjaxUpload2 = new AjaxUpload('#upload_button2',uploadOption);
+  }
+  $(".submit").click(function(){
+    oAjaxUpload.submit();
+    if( type == 6){
+      oAjaxUpload2.submit();
+    }
+    news_save();
+  })
+  function news_save(){
+    var img_path=$("#logo_path").val();
     var content = UE.getEditor('container').getContent();
     var date = $("#news-date").val();
-    console.log(content);
+    
+    var pdf_path = '';
+    var type = $("#type").val();
+    if(type == 6){
+      pdf_path = $("#pdf_path").val();
+    }
     $.ajax({
       url: $('#form-progress').attr('action'),
       type: 'POST',
       dataType: 'json',
       // data: $('#form-product').serialize(),
-      data:{"title":$('#news-title').val(),'details':content,"date":date},
+      data:{"title":$('#news-title').val(),'details':content,"date":date,"img_path":img_path},
       async: false,
     })
     .done(function(response) {
@@ -137,7 +234,7 @@ $(function(){
     .always(function() {
         console.log("complete");
     });
-    }
+  }
 });
 </script> 
 </body>

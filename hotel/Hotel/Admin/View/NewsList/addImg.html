@@ -29,6 +29,8 @@
 <body>
 <div class="pd-20">
   <form action="" method="post" class="form form-horizontal" id="form-product">
+  <input type="hidden" value="" id="logo_path" name="logo_path" />
+  <input type="hidden" value="" id="pdf_path" name="pdf_path" />
   <input type="hidden" value="{:I('get.type')}" id="type">
     <div class="row cl">
       <label class="form-label col-2">标题：</label>
@@ -44,6 +46,28 @@
       </div>
       <div class="col-4"> </div>
     </div>
+    <div class="row cl">
+      <label class="form-label col-2">封面图片：</label>
+      <div class="formControls col-5">
+        <img id="new_logo" src="" style="width:120px;display: none;margin-bottom:10px;">
+        <input type="button" class="btn btn-primary" id="upload_button"  value=" 上传图片 " /><br/>
+        <b style="color:red">*建议上传尺寸为宽200px 高180px的图片</b>
+      </div>
+      <div class="col-4"> </div>
+    </div>
+    <if condition="$_GET['type'] eq 6">
+      <div class="row cl">
+
+        <label class="form-label col-2">会刊文件：</label>
+        <div class="formControls col-5">
+          <input type="text" class="input-text" placeholder="请输入10个字以内的标题" id="new_pdf" name="pdf" style="width:;display: none;margin-bottom:10px;">
+          <input type="button" class="btn btn-primary" id="upload_button2"  value="上传PDF" /><br/>
+          <b style="color:red">*建议上传小于10MB的PDF文件</b>
+        </div>
+        <div class="col-4"> </div>
+      </div>
+    </if>
+
     <div class="row cl">
       <label class="form-label col-2">详情：</label>
       <div class="formControls col-5">
@@ -74,6 +98,7 @@
     $('#news-date').datetimepicker();
     $('#news-date').datetimepicker({value:'',step:10});
 </script>
+<script type="text/javascript" src="__PUBLIC__/Admin/js/ajaxupload.js"></script>
 <!-- 配置文件 -->
 <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
 <!-- 编辑器源码文件 -->
@@ -96,23 +121,97 @@ $(function(){
 		increaseArea: '20%'
 	});
 
+  //上传图片
+  var uploadOption = 
+  {
+    action:"{:U('NewsList/uppic')}",
+    name:"image",
+    // autoSubmit:false,
+    onChange:function(file,extension){
+      if(new RegExp(/(jpg)|(jpeg)|(bmp)|(png)/i).test(extension)){
+        $("#logo_path").val(file);
+      }else{
+        alert("图片格式错误，请上传jpg/jpeg/png/bmp格式的图片！");
+        return false;
+      }
+    },
+    // onSubmit:function(file,extension){
+    //  $("#state").val("在上传"+file+"...");
+    // },
+    onComplete: function(file, response){
+      //console.log(response);
+        if(response == 'error'){
+            alert("文件上传失败请重新上传");
+            console.log(response);
+        }else{
+            
+            $('#logo_path').val(response);
+            $('#new_logo').css("display","block");
+            $('#new_logo').attr('src',"__ROOT__/"+response);
+        }
+        // window.clearInterval(interval);
+        this.enable();
+    }
+  }
+  var oAjaxUpload = new AjaxUpload('#upload_button',uploadOption);
+
+  var type = $("#type").val();
+
+  if( type == 6){
+    //上传pdf 
+    var uploadOption = 
+    {
+      action:"{:U('NewsList/uppdf')}",
+      name:"file",
+      // autoSubmit:false,
+      onChange:function(file,extension){
+        if(new RegExp(/(docx)|(doc)|(pdf)/i).test(extension)){
+          $("#pdf_path").val(file);
+        }else{
+          alert("文件格式错误，请上传doc/docx/pdf格式的文件！");
+          return false;
+        }
+      },
+      onComplete: function(file, response){
+        //console.log(response);
+          if(response == 'error'){
+              // confirmdiv.text("文件上传失败请重新上传");
+              alert("文件上传失败请重新上传");
+              console.log(response);
+          }else{
+              $('#pdf_path').val(response);
+              $('#new_pdf').css("display","block");
+              $('#new_pdf').attr('value',"__ROOT__/"+response);
+          }
+          this.enable();
+      }
+    }
+    var oAjaxUpload2 = new AjaxUpload('#upload_button2',uploadOption);
+  }
   $(".submit").click(function(){
-      news_add();
-    })
+    oAjaxUpload.submit();
+    if( type == 6){
+      oAjaxUpload2.submit();
+    }
+    news_add();
+  })
 
   function news_add(){
-    // console.log($('#news-title').val());
-    // console.log($('#form-product').attr('action'));
+    var img_path=$("#logo_path").val();
     var content = UE.getEditor('container').getContent();
     var date = $("#news-date").val();
          // console.log(content);
+    var pdf_path = '';
     var type = $("#type").val();
+    if(type == 6){
+      pdf_path = $("#pdf_path").val();
+    }
+    // alert(pdf);
     $.ajax({
       url: $('#form-product').attr('action'),
       type: 'POST',
       dataType: 'json',
-      // data: $('#form-product').serialize(),
-      data:{"title":$('#news-title').val(),"details":content,'type':type,"date":date},
+      data:{"title":$('#news-title').val(),"details":content,'type':type,"date":date,"img_path":img_path,"pdf_path":pdf_path},
     })
       .done(function(response) {
           console.log("success");

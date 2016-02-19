@@ -1,26 +1,15 @@
 <?php
 namespace Admin\Model;
 use Think\Model;
-class NewsListModel extends Model {
-    protected $tableName = 'news_list'; 
+class IntelligenceModel extends Model {
+    protected $tableName = 'intelligence'; 
 	// 定义自动验证
     protected $_validate = array(
     	array('title','require','请输入标题'),
         array('details','require','新闻详情必须填写！'),
     );
 
-    //获取新闻列表 
-    // public function showNews($where){
-    //     // type为0表示新闻列表
-    // 	$result = $this->where($where)->order('update_time desc')->select();
-    // 	if(count($result) <= 0){
-    // 		return false;
-    // 	}else{
-    // 		return $result;
-    // 	}
-    // }
-
-    //获取新闻列表 ~ 带有分页
+    //获取经营情报 ~ 带有分页
     public function getPageInfo($where, $nums=10){
         $p = I("get.p", 1);
         $order = array(
@@ -38,12 +27,11 @@ class NewsListModel extends Model {
         );
     }
 
-    //添加新闻 
+    //添加经营情报
     public function addN($data){
         if($data){
             $data['update_time'] =date("Y-m-d",time());
             $result = $this->add($data);
-            // print_r($result);exit();
             if($result){
                 return true;
             }else{
@@ -52,7 +40,7 @@ class NewsListModel extends Model {
         } 
     }
 
-    //编辑新闻 
+    //编辑经营情报
     public function editN($id,$data){
         if($data){   
             $data['update_time'] =date("Y-m-d",time());
@@ -65,8 +53,8 @@ class NewsListModel extends Model {
         } 
     }
 
-    //显示某条新闻记录
-    public function showOneNews($id){
+    //显示某条经营情报
+    public function showOneData($id){
         $where['id'] = $id; 
         $result = $this->where($where)->find();
         if(count($result) <= 0){
